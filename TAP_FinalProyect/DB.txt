@@ -1,0 +1,50 @@
+﻿Codigo para las tablas
+
+CREATE TABLE tbl_maquinas (
+    idmaquina INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE tbl_mecanicos (
+    idmecanico INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    apellidos VARCHAR(150) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE tbl_piezas (
+    idpieza INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    stock INT NOT NULL,
+    costo DECIMAL(10,2) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE tbl_mantenimientos (
+    idmantenimiento INT PRIMARY KEY AUTO_INCREMENT,
+    fkidmaquina INT NOT NULL,
+    fkidmecanico INT NOT NULL,
+    fecha DATE NOT NULL,
+    descripcion TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (fkidmaquina) REFERENCES tbl_maquinas(idmaquina),
+    FOREIGN KEY (fkidmecanico) REFERENCES tbl_mecanicos(idmecanico)
+);
+
+CREATE TABLE tbl_detallemantenimientos (
+    iddetalle INT PRIMARY KEY AUTO_INCREMENT,
+    idpieza INT NOT NULL,
+    idmantenimiento INT NOT NULL,
+    cantidad INT NOT NULL,
+    costo DECIMAL(10,2) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (idpieza) REFERENCES tbl_piezas(idpieza),
+    FOREIGN KEY (idmantenimiento) REFERENCES tbl_mantenimientos(idmantenimiento)
+);
