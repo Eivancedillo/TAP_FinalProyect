@@ -1,4 +1,4 @@
-﻿Codigo para las tablas
+﻿    --- Codigo para las tablas ---
 
 CREATE TABLE tbl_maquinas (
     idmaquina INT PRIMARY KEY AUTO_INCREMENT,
@@ -48,3 +48,31 @@ CREATE TABLE tbl_detallemantenimientos (
     FOREIGN KEY (idpieza) REFERENCES tbl_piezas(idpieza),
     FOREIGN KEY (idmantenimiento) REFERENCES tbl_mantenimientos(idmantenimiento)
 );
+
+CREATE TABLE usuarios(
+	idu INT AUTO_INCREMENT PRIMARY KEY, 
+	nombre VARCHAR(50), 
+	clave VARCHAR(255)
+);
+
+    insert into usuarios values(null, 'admin', SHA1('admin'));
+
+
+    --- Procedimientos ---
+
+DROP PROCEDURE if EXISTS validar;
+CREATE PROCEDURE validar(
+in _nombre VARCHAR(50),
+IN _clave VARCHAR(255)
+)
+BEGIN
+	declare x INT;
+	
+	SELECT COUNT(*) FROM usuarios WHERE nombre = _nombre AND clave = _clave INTO x;
+	
+	if X > 0 then
+		SELECT 'Aceptado' AS rs;
+	else
+		SELECT 'Error' AS rs;
+	END if;
+END;
