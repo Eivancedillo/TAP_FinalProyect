@@ -33,5 +33,11 @@ namespace TAP_FinalProyect
             FrmMaquinas frm = new FrmMaquinas();
             frm.ShowDialog();
         }
+
+        private void OptPiezas_Click(object sender, EventArgs e)
+        {
+            FrmPiezas frm = new FrmPiezas();
+            frm.ShowDialog();
+        }
     }
 }

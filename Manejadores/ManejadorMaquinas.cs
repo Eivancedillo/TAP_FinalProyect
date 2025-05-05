@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using AccesoDatos;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.IO;
 
 namespace Manejadores
 {
@@ -79,7 +80,10 @@ namespace Manejadores
 
                 // Configurar el nombre y la ubicacion del archivo excel
                 string dateTime = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
-                string filePath = $@"C:\Users\Eivan\Documents\Maquinas_{dateTime}.xlsx";
+                string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                string fileName = $"Maquinas_{dateTime}.xlsx";
+                string filePath = Path.Combine(documentsPath, fileName);
+
                 excelWorkBook.SaveAs(filePath);
 
                 // Mensaje de confirmacion

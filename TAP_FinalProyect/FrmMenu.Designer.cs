@@ -89,6 +89,7 @@
             this.OptPiezas.Name = "OptPiezas";
             this.OptPiezas.Size = new System.Drawing.Size(70, 70);
             this.OptPiezas.Text = "Piezas";
+            this.OptPiezas.Click += new System.EventHandler(this.OptPiezas_Click);
             // 
             // OptMantenimientos
             // 

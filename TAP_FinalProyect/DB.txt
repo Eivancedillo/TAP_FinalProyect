@@ -124,3 +124,26 @@ CREATE PROCEDURE p_editar_maquinas(
 BEGIN
 	UPDATE tbl_maquinas set nombre = _nombre, descripcion = _descripcion where idmaquina = _idmaquina;
 end;
+
+        -- Piezas --
+
+DROP PROCEDURE if EXISTS p_insertar_piezas;
+CREATE PROCEDURE p_insertar_piezas(
+    _nombre VARCHAR(100),
+    _stock INT,
+    _costo DECIMAL(10,2)
+)
+BEGIN
+	insert into tbl_piezas(nombre, stock, costo) values(_nombre, _stock, _costo);
+end;
+
+DROP PROCEDURE if EXISTS p_editar_piezas;
+CREATE PROCEDURE p_editar_piezas(
+    _idpieza INT,
+    _nombre VARCHAR(100),
+    _stock INT,
+    _costo DECIMAL(10,2)
+)
+BEGIN
+	UPDATE tbl_piezas set nombre = _nombre, stock = _stock, costo = _costo where idpieza = _idpieza;
+end;

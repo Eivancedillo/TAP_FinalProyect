@@ -1,65 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using AccesoDatos;
 using Entidades;
+using AccesoDatos;
+using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.IO;
 
 namespace Manejadores
 {
-    public class ManejadorMecanico
+    public class ManejadorPiezas
     {
         Base b = new Base("localhost", "root", "lirroy", "db_TAPFinalProyect");
 
-        public void Guardar(Mecanicos mecanico)
+        public void Guardar(Piezas pieza)
         {
-            b.Comando($"call p_insertar_mecanico('{mecanico.Nombre}', '{mecanico.Apellidos}')");
+            b.Comando($"call p_insertar_piezas('{pieza.Nombre}', {pieza.Stock}, {pieza.Costo})");
         }
 
-        public void Borrar(Mecanicos mecanico)
+        public void Borrar(Piezas pieza)
         {
-            var rs = MessageBox.Show($"¿Está seguro de borrar a {mecanico.Nombre}?", "Borrrar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+            var rs = MessageBox.Show($"¿Está seguro de borrar a {pieza.Nombre}?", "Borrrar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
             {
-                b.Comando($"delete from tbl_mecanicos where idmecanico = {mecanico.IdMecanico}");
+                b.Comando($"delete from tbl_piezas where idpieza = {pieza.IdPieza}");
             }
         }
 
-        public void Editar(Mecanicos mecanico)
+        public void Editar(Piezas pieza)
         {
-            b.Comando($"call p_editar_mecanico({mecanico.IdMecanico}, '{mecanico.Nombre}', '{mecanico.Apellidos}')");
+            b.Comando($"call p_editar_piezas({pieza.IdPieza}, '{pieza.Nombre}', {pieza.Stock}, {pieza.Costo})");
         }
 
         public void Mostrar(string query, DataGridView tabla, string datos)
         {
             tabla.Columns.Clear();
             tabla.DataSource = b.Consultar(query, datos).Tables[0];
-            tabla.Columns["idmecanico"].Visible = false;
+            tabla.Columns["idpieza"].Visible = false;
             tabla.Columns["created_at"].Visible = false;
             tabla.Columns["updated_at"].Visible = false;
-
-            tabla.Columns.Insert(3, Boton("Editar", Color.Green));
-            tabla.Columns.Insert(4, Boton("Borrar", Color.Red));
-
+            tabla.Columns.Insert(4, ManejadorMecanico.Boton("Editar", System.Drawing.Color.Green));
+            tabla.Columns.Insert(5, ManejadorMecanico.Boton("Borrar", System.Drawing.Color.Red));
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
-        }
-
-        public static DataGridViewButtonColumn Boton(string titulo, Color color)
-        {
-            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            btn.Text = titulo;
-            btn.UseColumnTextForButtonValue = true;
-            btn.FlatStyle = FlatStyle.Popup;
-            btn.DefaultCellStyle.BackColor = color;
-            btn.DefaultCellStyle.ForeColor = Color.White;
-            return btn;
         }
 
         public void GenerarExcel(DataGridView tabla)
@@ -93,8 +78,9 @@ namespace Manejadores
 
                 // Configurar el nombre y la ubicacion del archivo excel
                 string dateTime = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+
                 string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                string fileName = $"Mecanicos_{dateTime}.xlsx";
+                string fileName = $"Piezas_{dateTime}.xlsx";
                 string filePath = Path.Combine(documentsPath, fileName);
 
                 excelWorkBook.SaveAs(filePath);
