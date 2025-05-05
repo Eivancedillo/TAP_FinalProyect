@@ -16,5 +16,10 @@ namespace TAP_FinalProyect
         {
             InitializeComponent();
         }
+
+        private void OptSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
