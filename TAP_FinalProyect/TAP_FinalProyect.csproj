@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmDatosMecanicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDatosMecanicos.Designer.cs">
+      <DependentUpon>FrmDatosMecanicos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMecanicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMecanicos.Designer.cs">
+      <DependentUpon>FrmMecanicos.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMenu.cs">
       <SubType>Form</SubType>
@@ -60,8 +72,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmDatosMecanicos.resx">
+      <DependentUpon>FrmDatosMecanicos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMecanicos.resx">
+      <DependentUpon>FrmMecanicos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
@@ -92,6 +110,10 @@
     <Content Include="DB.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{f1965f6a-7076-48b2-9614-ad54e48cd6cd}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Manejadores\Manejadores.csproj">
       <Project>{84f4e0ee-295a-47df-be8d-8c8a47840f89}</Project>
       <Name>Manejadores</Name>

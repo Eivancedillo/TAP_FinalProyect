@@ -1,4 +1,10 @@
-﻿    --- Codigo para las tablas ---
+﻿DB: db_TAPFinalProyect
+user: root
+password: lirroy
+host: localhost
+port: 3308:3306
+
+    --- Codigo para las tablas ---
 
 CREATE TABLE tbl_maquinas (
     idmaquina INT PRIMARY KEY AUTO_INCREMENT,
@@ -76,3 +82,24 @@ BEGIN
 		SELECT 'Error' AS rs;
 	END if;
 END;
+
+        -- Mecanicos --
+
+DROP PROCEDURE if EXISTS p_insertar_mecanico;
+CREATE PROCEDURE p_insertar_mecanico(
+    _nombre VARCHAR(100),
+    _apellidos VARCHAR(150)
+)
+BEGIN
+	insert into tbl_mecanicos(nombre, apellidos) values(_nombre, _apellidos);
+end;
+
+DROP PROCEDURE if EXISTS p_editar_mecanico;
+CREATE PROCEDURE p_editar_mecanico(
+	_idmecanico int,
+    _nombre VARCHAR(100),
+    _apellidos VARCHAR(150)
+)
+BEGIN
+	UPDATE tbl_mecanicos set nombre = _nombre, apellidos = _apellidos where idmecanico = _idmecanico;
+end;

@@ -67,6 +67,7 @@
             this.OptMecanicos.Name = "OptMecanicos";
             this.OptMecanicos.Size = new System.Drawing.Size(70, 70);
             this.OptMecanicos.Text = "Mecanicos";
+            this.OptMecanicos.Click += new System.EventHandler(this.OptMecanicos_Click);
             // 
             // OptMaquinas
             // 

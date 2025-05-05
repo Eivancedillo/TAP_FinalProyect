@@ -21,5 +21,11 @@ namespace TAP_FinalProyect
         {
             Application.Exit();
         }
+
+        private void OptMecanicos_Click(object sender, EventArgs e)
+        {
+            FrmMecanicos frm = new FrmMecanicos();
+            frm.ShowDialog();
+        }
     }
 }
