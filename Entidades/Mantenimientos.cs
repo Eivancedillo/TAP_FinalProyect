@@ -8,7 +8,7 @@ namespace Entidades
 {
     public class Mantenimientos
     {
-        public Mantenimientos(int idMantenimiento, int fkIdMaquina, int fkIdMecanico, string fecha, int descipcion)
+        public Mantenimientos(int idMantenimiento, int fkIdMaquina, int fkIdMecanico, string fecha, string descipcion)
         {
             IdMantenimiento = idMantenimiento;
             FkIdMaquina = fkIdMaquina;
@@ -21,6 +21,6 @@ namespace Entidades
         public int FkIdMaquina { get; set; }
         public int FkIdMecanico { get; set; }
         public string Fecha { get; set; }
-        public int Descipcion { get; set; }
+        public string Descipcion { get; set; }
     }
 }

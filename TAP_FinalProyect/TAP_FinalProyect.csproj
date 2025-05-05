@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmDatosMantenimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDatosMantenimientos.Designer.cs">
+      <DependentUpon>FrmDatosMantenimientos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDatosMaquinas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,12 @@
     </Compile>
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMantenimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMantenimientos.Designer.cs">
+      <DependentUpon>FrmMantenimientos.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMaquinas.cs">
       <SubType>Form</SubType>
@@ -96,6 +108,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmDatosMantenimientos.resx">
+      <DependentUpon>FrmDatosMantenimientos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDatosMaquinas.resx">
       <DependentUpon>FrmDatosMaquinas.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMantenimientos.resx">
+      <DependentUpon>FrmMantenimientos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMaquinas.resx">
       <DependentUpon>FrmMaquinas.cs</DependentUpon>

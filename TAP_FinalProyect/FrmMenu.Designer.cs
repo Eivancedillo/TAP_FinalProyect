@@ -100,6 +100,7 @@
             this.OptMantenimientos.Name = "OptMantenimientos";
             this.OptMantenimientos.Size = new System.Drawing.Size(70, 70);
             this.OptMantenimientos.Text = "Mantenimientos";
+            this.OptMantenimientos.Click += new System.EventHandler(this.OptMantenimientos_Click);
             // 
             // OptUsuarios
             // 
@@ -120,6 +121,7 @@
             this.OptCambiarUsuario.Name = "OptCambiarUsuario";
             this.OptCambiarUsuario.Size = new System.Drawing.Size(70, 70);
             this.OptCambiarUsuario.Text = "Cambiar usuario";
+            this.OptCambiarUsuario.Click += new System.EventHandler(this.OptCambiarUsuario_Click);
             // 
             // OptSalir
             // 

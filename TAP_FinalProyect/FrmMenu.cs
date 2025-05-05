@@ -39,5 +39,23 @@ namespace TAP_FinalProyect
             FrmPiezas frm = new FrmPiezas();
             frm.ShowDialog();
         }
+
+        private void OptMantenimientos_Click(object sender, EventArgs e)
+        {
+            FrmMantenimientos frm = new FrmMantenimientos();
+            frm.ShowDialog();
+        }
+
+        private void OptCambiarUsuario_Click(object sender, EventArgs e)
+        {
+            // mensaje para decirle si quiere cambiar o no
+            var rs = MessageBox.Show("¿Desea cambiar de usuario?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+            {
+                this.Close();
+                FrmLogin frm = new FrmLogin();
+                frm.ShowDialog();
+            }
+        }
     }
 }
