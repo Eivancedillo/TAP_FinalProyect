@@ -27,5 +27,11 @@ namespace TAP_FinalProyect
             FrmMecanicos frm = new FrmMecanicos();
             frm.ShowDialog();
         }
+
+        private void OptMaquinas_Click(object sender, EventArgs e)
+        {
+            FrmMaquinas frm = new FrmMaquinas();
+            frm.ShowDialog();
+        }
     }
 }

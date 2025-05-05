@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmDatosMaquinas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDatosMaquinas.Designer.cs">
+      <DependentUpon>FrmDatosMaquinas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDatosMecanicos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,12 @@
     </Compile>
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMaquinas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMaquinas.Designer.cs">
+      <DependentUpon>FrmMaquinas.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMecanicos.cs">
       <SubType>Form</SubType>
@@ -72,11 +84,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmDatosMaquinas.resx">
+      <DependentUpon>FrmDatosMaquinas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDatosMecanicos.resx">
       <DependentUpon>FrmDatosMecanicos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMaquinas.resx">
+      <DependentUpon>FrmMaquinas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMecanicos.resx">
       <DependentUpon>FrmMecanicos.cs</DependentUpon>

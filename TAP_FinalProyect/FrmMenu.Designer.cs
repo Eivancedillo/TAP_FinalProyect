@@ -78,6 +78,7 @@
             this.OptMaquinas.Name = "OptMaquinas";
             this.OptMaquinas.Size = new System.Drawing.Size(70, 70);
             this.OptMaquinas.Text = "Maquinas";
+            this.OptMaquinas.Click += new System.EventHandler(this.OptMaquinas_Click);
             // 
             // OptPiezas
             // 

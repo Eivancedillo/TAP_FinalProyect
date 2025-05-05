@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ManejadorLogin.cs" />
+    <Compile Include="ManejadorMaquinas.cs" />
     <Compile Include="ManejadorMecanico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

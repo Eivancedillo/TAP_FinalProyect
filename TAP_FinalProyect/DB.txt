@@ -103,3 +103,24 @@ CREATE PROCEDURE p_editar_mecanico(
 BEGIN
 	UPDATE tbl_mecanicos set nombre = _nombre, apellidos = _apellidos where idmecanico = _idmecanico;
 end;
+
+        -- Maquinas --
+
+DROP PROCEDURE if EXISTS p_insertar_maquinas;
+CREATE PROCEDURE p_insertar_maquinas(
+    _nombre VARCHAR(100),
+    _descripcion TEXT
+)
+BEGIN
+	insert into tbl_maquinas(nombre, descripcion) values(_nombre, _descripcion);
+end;
+
+DROP PROCEDURE if EXISTS p_editar_maquinas;
+CREATE PROCEDURE p_editar_maquinas(
+    _idmaquina INT,
+    _nombre VARCHAR(100),
+    _descripcion TEXT
+)
+BEGIN
+	UPDATE tbl_maquinas set nombre = _nombre, descripcion = _descripcion where idmaquina = _idmaquina;
+end;
