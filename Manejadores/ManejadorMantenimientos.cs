@@ -34,6 +34,25 @@ namespace Manejadores
             b.Comando($"call p_editar_mantenimientos({mantenimiento.IdMantenimiento}, {mantenimiento.FkIdMaquina}, {mantenimiento.FkIdMecanico}, '{mantenimiento.Fecha}', '{mantenimiento.Descipcion}')");
         }
 
+        public void LlenarMaquina(ComboBox cmb)
+        {
+            cmb.DataSource = b.Consultar("select idmaquina, nombre from v_maquinas", "v_maquinas").Tables[0];
+            cmb.DisplayMember = "nombre";
+            cmb.ValueMember = "idmaquina";
+        }
+
+        public void LlenarMecanico(ComboBox cmb)
+        {
+            cmb.DataSource = b.Consultar("select idmecanico, nombre from v_mecanicos", "v_mecanicos").Tables[0];
+            cmb.DisplayMember = "nombre";
+            cmb.ValueMember = "idmecanico";
+        }
+
+        public int UltimoIdMantenimiento()
+        {
+            return int.Parse(b.Consultar("select id from v_ultimomantenimiento", "v_ultimomantenimiento").Tables[0].Rows[0][0].ToString());
+        }
+
         public void Mostrar(string query, DataGridView tabla, string datos)
         {
             tabla.Columns.Clear();

@@ -15,7 +15,7 @@ namespace TAP_FinalProyect
     public partial class FrmMantenimientos : Form
     {
         ManejadorMantenimientos Mm;
-        Mantenimientos mantenimientos = new Mantenimientos(0, 0, 0, "", "");
+        public static Mantenimientos mantenimientos = new Mantenimientos(0, 0, 0, "", "");
         int fila = 0, columna = 0;
         public FrmMantenimientos()
         {
