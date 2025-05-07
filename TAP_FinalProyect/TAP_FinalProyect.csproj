@@ -170,9 +170,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DB.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{f1965f6a-7076-48b2-9614-ad54e48cd6cd}</Project>
       <Name>Entidades</Name>
