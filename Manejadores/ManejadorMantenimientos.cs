@@ -17,7 +17,7 @@ namespace Manejadores
 
         public void Guardar(Mantenimientos mantenimiento)
         {
-            b.Comando($"call p_insertar_mantenimientos({mantenimiento.FkIdMaquina}, {mantenimiento.FkIdMecanico}, {mantenimiento.Fecha}, '{mantenimiento.Descipcion}')");
+            b.Comando($"call p_insertar_mantenimientos({mantenimiento.FkIdMaquina}, {mantenimiento.FkIdMecanico}, '{mantenimiento.Fecha}', '{mantenimiento.Descipcion}')");
         }
 
         public void Borrar(Mantenimientos mantenimiento)
@@ -34,6 +34,16 @@ namespace Manejadores
             b.Comando($"call p_editar_mantenimientos({mantenimiento.IdMantenimiento}, {mantenimiento.FkIdMaquina}, {mantenimiento.FkIdMecanico}, '{mantenimiento.Fecha}', '{mantenimiento.Descipcion}')");
         }
 
+        public void EditarEstado(Mantenimientos mantenimiento)
+        {
+            var rs = MessageBox.Show($"¿Está seguro de finalizar el mantenimiento?", "Finalizar mantenimiento", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (rs == DialogResult.Yes)
+            {
+                b.Comando($"call p_editar_estado_mantenimiento({mantenimiento.IdMantenimiento}, '{mantenimiento.Estado}')");
+            }
+        }
+
         public void LlenarMaquina(ComboBox cmb)
         {
             cmb.DataSource = b.Consultar("select idmaquina, nombre from v_maquinas", "v_maquinas").Tables[0];
@@ -48,20 +58,31 @@ namespace Manejadores
             cmb.ValueMember = "idmecanico";
         }
 
-        public int UltimoIdMantenimiento()
-        {
-            return int.Parse(b.Consultar("select id from v_ultimomantenimiento", "v_ultimomantenimiento").Tables[0].Rows[0][0].ToString());
-        }
-
         public void Mostrar(string query, DataGridView tabla, string datos)
         {
             tabla.Columns.Clear();
             tabla.DataSource = b.Consultar(query, datos).Tables[0];
             tabla.Columns["idmantenimiento"].Visible = false;
-            tabla.Columns["created_at"].Visible = false;
-            tabla.Columns["updated_at"].Visible = false;
-            tabla.Columns.Insert(5, ManejadorMecanico.Boton("Editar", System.Drawing.Color.Green));
-            tabla.Columns.Insert(6, ManejadorMecanico.Boton("Borrar", System.Drawing.Color.Red));
+            tabla.Columns["idmaquina"].Visible = false;
+            tabla.Columns["idmecanico"].Visible = false;
+            tabla.Columns.Insert(8, ManejadorMecanico.Boton("Mantenimiento", System.Drawing.Color.Orange));
+            tabla.Columns.Insert(9, ManejadorMecanico.Boton("Editar", System.Drawing.Color.Green));
+            tabla.Columns.Insert(10, ManejadorMecanico.Boton("Borrar", System.Drawing.Color.Red));
+            tabla.Columns.Insert(11, ManejadorMecanico.Boton("Finalizar", System.Drawing.Color.BlueViolet));
+            tabla.AutoResizeColumns();
+            tabla.AutoResizeRows();
+        }
+
+        public void Mostrar2(string query, DataGridView tabla, string datos)
+        {
+            tabla.Columns.Clear();
+            tabla.DataSource = b.Consultar(query, datos).Tables[0];
+            tabla.Columns["idmantenimiento"].Visible = false;
+            tabla.Columns["idmaquina"].Visible = false;
+            tabla.Columns["idmecanico"].Visible = false;
+            tabla.Columns.Insert(8, ManejadorMecanico.Boton("Mantenimiento", System.Drawing.Color.Orange));
+            tabla.Columns.Insert(9, ManejadorMecanico.Boton("Editar", System.Drawing.Color.Green));
+            tabla.Columns.Insert(10, ManejadorMecanico.Boton("Borrar", System.Drawing.Color.Red));
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
         }

@@ -55,6 +55,7 @@ namespace Manejadores
         {
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             btn.Text = titulo;
+            btn.Name = titulo;
             btn.UseColumnTextForButtonValue = true;
             btn.FlatStyle = FlatStyle.Popup;
             btn.DefaultCellStyle.BackColor = color;

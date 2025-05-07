@@ -35,6 +35,7 @@
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.CmbEstado = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,9 +87,9 @@
             // 
             // TxtBuscar
             // 
-            this.TxtBuscar.Location = new System.Drawing.Point(130, 10);
+            this.TxtBuscar.Location = new System.Drawing.Point(113, 10);
             this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(621, 30);
+            this.TxtBuscar.Size = new System.Drawing.Size(511, 30);
             this.TxtBuscar.TabIndex = 22;
             // 
             // label1
@@ -96,9 +97,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(10, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 25);
+            this.label1.Size = new System.Drawing.Size(97, 25);
             this.label1.TabIndex = 21;
-            this.label1.Text = "Descripcion";
+            this.label1.Text = "Mecanico";
+            // 
+            // CmbEstado
+            // 
+            this.CmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbEstado.FormattingEnabled = true;
+            this.CmbEstado.Location = new System.Drawing.Point(630, 10);
+            this.CmbEstado.Name = "CmbEstado";
+            this.CmbEstado.Size = new System.Drawing.Size(121, 33);
+            this.CmbEstado.TabIndex = 27;
             // 
             // FrmMantenimientos
             // 
@@ -106,6 +116,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(948, 377);
+            this.Controls.Add(this.CmbEstado);
             this.Controls.Add(this.BtnExcel);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.DtgDatos);
@@ -131,5 +142,6 @@
         private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.TextBox TxtBuscar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox CmbEstado;
     }
 }

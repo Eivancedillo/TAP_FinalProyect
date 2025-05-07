@@ -21,6 +21,9 @@ namespace TAP_FinalProyect
         {
             InitializeComponent();
             Mm = new ManejadorMantenimientos();
+
+            CmbEstado.Items.Add("Pendiente");
+            CmbEstado.Items.Add("Finalizado");
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
@@ -48,23 +51,45 @@ namespace TAP_FinalProyect
         {
             //Llenar datos
             mantenimientos.IdMantenimiento = int.Parse(DtgDatos.Rows[fila].Cells["idmantenimiento"].Value.ToString());
-            mantenimientos.FkIdMaquina = int.Parse(DtgDatos.Rows[fila].Cells["Maquina"].Value.ToString());
-            mantenimientos.FkIdMecanico = int.Parse(DtgDatos.Rows[fila].Cells["Mecanico"].Value.ToString());
+            mantenimientos.FkIdMaquina = int.Parse(DtgDatos.Rows[fila].Cells["idmaquina"].Value.ToString());
+            mantenimientos.FkIdMecanico = int.Parse(DtgDatos.Rows[fila].Cells["idmecanico"].Value.ToString());
             mantenimientos.Fecha = DtgDatos.Rows[fila].Cells["Fecha"].Value.ToString();
             mantenimientos.Descipcion = DtgDatos.Rows[fila].Cells["Descripcion"].Value.ToString();
+
             switch (columna)
             {
-                case 5:
+                case 8:
+                    {
+                        if(DtgDatos.Rows[fila].Cells["Estado"].Value.ToString() == "Pendiente")
+                        {
+                            FrmDetallesMantenimientos frm = new FrmDetallesMantenimientos(mantenimientos.IdMantenimiento);
+                            frm.ShowDialog();
+                            DtgDatos.Columns.Clear();
+                        }
+                        else
+                        {
+                            FrmDetallesMantenimientos frm = new FrmDetallesMantenimientos(mantenimientos.IdMantenimiento, false);
+                            frm.ShowDialog();
+                            DtgDatos.Columns.Clear();
+                        }
+                    }
+                    ; break;
+                case 9:
                     {
                         FrmDatosMantenimientos Frm = new FrmDatosMantenimientos();
                         Frm.ShowDialog();
                         DtgDatos.Columns.Clear();
                     }
                     ; break;
-                case 6:
+                case 10:
                     {
                         Mm.Borrar(mantenimientos);
                         DtgDatos.Columns.Clear();
+                    }
+                    ; break;
+                case 11:
+                    {
+                        Mm.EditarEstado(new Mantenimientos(mantenimientos.IdMantenimiento,0,0,"","", "Finalizado"));
                     }
                     ; break;
             }
@@ -77,7 +102,15 @@ namespace TAP_FinalProyect
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            Mm.Mostrar($"select * from v_mantenimientos where Descripcion like '%{TxtBuscar.Text}%'", DtgDatos, "v_mantenimientos");
+            if (CmbEstado.Text == "")
+                MessageBox.Show("Seleccione un estado para el filtro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                if(CmbEstado.Text == "Pendiente")
+                    Mm.Mostrar($"select * from v_mantenimientos where Mecanico like '%{TxtBuscar.Text}%' and estado = 'Pendiente'", DtgDatos, "v_mantenimientos");
+                else
+                    Mm.Mostrar2($"select * from v_mantenimientos where Mecanico like '%{TxtBuscar.Text}%' and estado = 'Finalizado'", DtgDatos, "v_mantenimientos");
+            }
         }
     }
 }

@@ -9,17 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Manejadores;
 using Entidades;
+using System.Threading;
 
 namespace TAP_FinalProyect
 {
     public partial class FrmDatosMantenimientos : Form
     {
         ManejadorMantenimientos Mm;
+        ManejadorDetallesMantenimientos Md;
         int idMantenimiento = 0;
         public FrmDatosMantenimientos()
         {
             InitializeComponent();
             Mm = new ManejadorMantenimientos();
+            Md = new ManejadorDetallesMantenimientos();
+            idMantenimiento = 0;
 
             Mm.LlenarMaquina(CmbMaquina);
             Mm.LlenarMecanico(CmbMecanico);
@@ -46,7 +50,18 @@ namespace TAP_FinalProyect
                     int.Parse(CmbMecanico.SelectedValue.ToString()),
                     DtpFecha.Value.ToString("yyyy-MM-dd"), TxtDescripcion.Text));
 
-                idMantenimiento = Mm.UltimoIdMantenimiento();
+                // Espere un poco de tiempo para que se guarde
+                Thread.Sleep(100);
+
+                idMantenimiento = Md.UltimoIdMantenimiento();
+
+                var rs = MessageBox.Show("Desea agregar piezas al mantenimiento", "Agregar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rs == DialogResult.Yes)
+                {
+                    FrmDetallesMantenimientos frm = new FrmDetallesMantenimientos(idMantenimiento);
+                    frm.ShowDialog();
+                    Close();
+                }
             }
             else
             {
@@ -57,16 +72,8 @@ namespace TAP_FinalProyect
 
                 idMantenimiento = FrmMantenimientos.mantenimientos.IdMantenimiento;
             }
-
-            var rs = MessageBox.Show("Desea agregar piezas al mantenimiento", "Agregar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (rs == DialogResult.Yes)
-            {
-                FrmDetallesMantenimientos frm = new FrmDetallesMantenimientos();
-                frm.ShowDialog();
-                Close();
-            }
-            else
-                Close();
+            
+            Close();
         }
     }
 }
