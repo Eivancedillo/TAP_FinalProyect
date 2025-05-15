@@ -49,7 +49,7 @@ namespace TAP_FinalProyect
         private void OptCambiarUsuario_Click(object sender, EventArgs e)
         {
             // mensaje para decirle si quiere cambiar o no
-            var rs = MessageBox.Show("¿Desea cambiar de usuario?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var rs = MessageBox.Show("¿Desea cerrar la sesión actual?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
             {
                 this.Close();

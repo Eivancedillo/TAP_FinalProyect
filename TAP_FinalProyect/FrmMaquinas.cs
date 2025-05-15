@@ -73,6 +73,11 @@ namespace TAP_FinalProyect
                 Mm.GenerarExcel(DtgDatos);
         }
 
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             Mm.Mostrar($"select * from tbl_maquinas where nombre like '%{TxtBuscar.Text}%'", DtgDatos, "tbl_maquinas");

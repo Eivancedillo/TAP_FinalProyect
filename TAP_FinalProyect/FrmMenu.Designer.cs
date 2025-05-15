@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -63,7 +62,7 @@
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(100, 755);
+            this.toolStrip1.Size = new System.Drawing.Size(115, 873);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -90,74 +89,86 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(127)))), ((int)(((byte)(130)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(100, 38);
+            this.panel3.Location = new System.Drawing.Point(115, 38);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(3, 755);
+            this.panel3.Size = new System.Drawing.Size(3, 873);
             this.panel3.TabIndex = 2;
             // 
             // OptMecanicos
             // 
             this.OptMecanicos.AutoSize = false;
-            this.OptMecanicos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.OptMecanicos.Image = ((System.Drawing.Image)(resources.GetObject("OptMecanicos.Image")));
+            this.OptMecanicos.BackgroundImage = global::TAP_FinalProyect.Properties.Resources.icons8_mecánico_100;
+            this.OptMecanicos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.OptMecanicos.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.OptMecanicos.ForeColor = System.Drawing.SystemColors.Window;
             this.OptMecanicos.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OptMecanicos.Name = "OptMecanicos";
-            this.OptMecanicos.Size = new System.Drawing.Size(100, 100);
+            this.OptMecanicos.Size = new System.Drawing.Size(115, 115);
             this.OptMecanicos.Text = "Mecanicos";
             this.OptMecanicos.Click += new System.EventHandler(this.OptMecanicos_Click);
             // 
             // OptMaquinas
             // 
             this.OptMaquinas.AutoSize = false;
-            this.OptMaquinas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.OptMaquinas.Image = ((System.Drawing.Image)(resources.GetObject("OptMaquinas.Image")));
+            this.OptMaquinas.BackgroundImage = global::TAP_FinalProyect.Properties.Resources.icons8_ice_maker_100;
+            this.OptMaquinas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.OptMaquinas.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.OptMaquinas.ForeColor = System.Drawing.SystemColors.Window;
             this.OptMaquinas.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OptMaquinas.Name = "OptMaquinas";
-            this.OptMaquinas.Size = new System.Drawing.Size(100, 100);
+            this.OptMaquinas.Size = new System.Drawing.Size(115, 115);
             this.OptMaquinas.Text = "Maquinas";
             this.OptMaquinas.Click += new System.EventHandler(this.OptMaquinas_Click);
             // 
             // OptPiezas
             // 
             this.OptPiezas.AutoSize = false;
-            this.OptPiezas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.OptPiezas.Image = ((System.Drawing.Image)(resources.GetObject("OptPiezas.Image")));
+            this.OptPiezas.BackgroundImage = global::TAP_FinalProyect.Properties.Resources.icons8_engranajes_100_gris;
+            this.OptPiezas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.OptPiezas.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.OptPiezas.ForeColor = System.Drawing.SystemColors.Window;
             this.OptPiezas.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OptPiezas.Name = "OptPiezas";
-            this.OptPiezas.Size = new System.Drawing.Size(100, 100);
+            this.OptPiezas.Size = new System.Drawing.Size(115, 115);
             this.OptPiezas.Text = "Piezas";
             this.OptPiezas.Click += new System.EventHandler(this.OptPiezas_Click);
             // 
             // OptMantenimientos
             // 
             this.OptMantenimientos.AutoSize = false;
-            this.OptMantenimientos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.OptMantenimientos.Image = ((System.Drawing.Image)(resources.GetObject("OptMantenimientos.Image")));
+            this.OptMantenimientos.BackgroundImage = global::TAP_FinalProyect.Properties.Resources.icons8_mantenimiento_100;
+            this.OptMantenimientos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.OptMantenimientos.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.OptMantenimientos.ForeColor = System.Drawing.SystemColors.Window;
             this.OptMantenimientos.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OptMantenimientos.Name = "OptMantenimientos";
-            this.OptMantenimientos.Size = new System.Drawing.Size(100, 100);
+            this.OptMantenimientos.Size = new System.Drawing.Size(115, 115);
             this.OptMantenimientos.Text = "Mantenimientos";
             this.OptMantenimientos.Click += new System.EventHandler(this.OptMantenimientos_Click);
             // 
             // OptUsuarios
             // 
             this.OptUsuarios.AutoSize = false;
-            this.OptUsuarios.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.OptUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("OptUsuarios.Image")));
+            this.OptUsuarios.BackgroundImage = global::TAP_FinalProyect.Properties.Resources.icons8_usuario_100;
+            this.OptUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.OptUsuarios.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.OptUsuarios.ForeColor = System.Drawing.SystemColors.Window;
             this.OptUsuarios.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OptUsuarios.Name = "OptUsuarios";
-            this.OptUsuarios.Size = new System.Drawing.Size(100, 100);
+            this.OptUsuarios.Size = new System.Drawing.Size(115, 115);
             this.OptUsuarios.Text = "Usuarios";
             // 
             // OptCambiarUsuario
             // 
             this.OptCambiarUsuario.AutoSize = false;
-            this.OptCambiarUsuario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.OptCambiarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("OptCambiarUsuario.Image")));
+            this.OptCambiarUsuario.BackgroundImage = global::TAP_FinalProyect.Properties.Resources.icons8_cerrar_sesión_100;
+            this.OptCambiarUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.OptCambiarUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.OptCambiarUsuario.ForeColor = System.Drawing.SystemColors.Window;
             this.OptCambiarUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OptCambiarUsuario.Name = "OptCambiarUsuario";
-            this.OptCambiarUsuario.Size = new System.Drawing.Size(100, 100);
-            this.OptCambiarUsuario.Text = "Cambiar usuario";
+            this.OptCambiarUsuario.Size = new System.Drawing.Size(115, 115);
+            this.OptCambiarUsuario.Text = "Cerrar sesión";
             this.OptCambiarUsuario.Click += new System.EventHandler(this.OptCambiarUsuario_Click);
             // 
             // OptSalir
@@ -165,10 +176,11 @@
             this.OptSalir.AutoSize = false;
             this.OptSalir.BackgroundImage = global::TAP_FinalProyect.Properties.Resources.icons8_macos_cerrar_601;
             this.OptSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.OptSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.OptSalir.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.OptSalir.ForeColor = System.Drawing.SystemColors.Window;
             this.OptSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OptSalir.Name = "OptSalir";
-            this.OptSalir.Size = new System.Drawing.Size(100, 100);
+            this.OptSalir.Size = new System.Drawing.Size(115, 115);
             this.OptSalir.Text = "Salir";
             this.OptSalir.Click += new System.EventHandler(this.OptSalir_Click);
             // 
@@ -177,12 +189,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(107)))), ((int)(((byte)(110)))));
-            this.ClientSize = new System.Drawing.Size(660, 793);
+            this.ClientSize = new System.Drawing.Size(660, 911);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMenu";

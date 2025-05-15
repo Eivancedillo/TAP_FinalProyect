@@ -186,5 +186,35 @@
   <ItemGroup>
     <None Include="Resources\icons8-macos-cerrar-601.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-búsqueda-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-más-2-matemáticas-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-más-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ms-excel-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-engranajes-100 gris.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-mecánico-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ice-maker-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-mantenimiento-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-usuario-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cerrar-sesión-100.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

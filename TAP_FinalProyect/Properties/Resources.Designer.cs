@@ -63,6 +63,46 @@ namespace TAP_FinalProyect.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_búsqueda_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-búsqueda-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_cerrar_sesión_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cerrar-sesión-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_engranajes_100_gris {
+            get {
+                object obj = ResourceManager.GetObject("icons8-engranajes-100 gris", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_ice_maker_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ice-maker-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_macos_cerrar_60 {
             get {
                 object obj = ResourceManager.GetObject("icons8-macos-cerrar-60", resourceCulture);
@@ -76,6 +116,66 @@ namespace TAP_FinalProyect.Properties {
         internal static System.Drawing.Bitmap icons8_macos_cerrar_601 {
             get {
                 object obj = ResourceManager.GetObject("icons8-macos-cerrar-601", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_mantenimiento_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-mantenimiento-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_más_2_matemáticas_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-más-2-matemáticas-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_más_60 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-más-60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_mecánico_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-mecánico-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_ms_excel_60 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ms-excel-60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_usuario_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-usuario-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

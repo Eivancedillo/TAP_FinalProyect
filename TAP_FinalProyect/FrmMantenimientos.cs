@@ -100,6 +100,11 @@ namespace TAP_FinalProyect
             fila = e.RowIndex; columna = e.ColumnIndex;
         }
 
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             if (CmbEstado.Text == "")
