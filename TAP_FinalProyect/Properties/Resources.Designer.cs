@@ -173,9 +173,29 @@ namespace TAP_FinalProyect.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_name_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-name-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_usuario_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-usuario-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_usuario_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-usuario-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

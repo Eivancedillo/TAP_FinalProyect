@@ -216,5 +216,11 @@
   <ItemGroup>
     <None Include="Resources\icons8-cerrar-sesión-100.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-usuario-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-name-100.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

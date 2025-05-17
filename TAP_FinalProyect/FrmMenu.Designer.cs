@@ -99,7 +99,7 @@
             this.OptMecanicos.AutoSize = false;
             this.OptMecanicos.BackgroundImage = global::TAP_FinalProyect.Properties.Resources.icons8_mecánico_100;
             this.OptMecanicos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.OptMecanicos.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.OptMecanicos.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OptMecanicos.ForeColor = System.Drawing.SystemColors.Window;
             this.OptMecanicos.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OptMecanicos.Name = "OptMecanicos";
@@ -112,7 +112,7 @@
             this.OptMaquinas.AutoSize = false;
             this.OptMaquinas.BackgroundImage = global::TAP_FinalProyect.Properties.Resources.icons8_ice_maker_100;
             this.OptMaquinas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.OptMaquinas.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.OptMaquinas.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OptMaquinas.ForeColor = System.Drawing.SystemColors.Window;
             this.OptMaquinas.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OptMaquinas.Name = "OptMaquinas";
@@ -125,7 +125,7 @@
             this.OptPiezas.AutoSize = false;
             this.OptPiezas.BackgroundImage = global::TAP_FinalProyect.Properties.Resources.icons8_engranajes_100_gris;
             this.OptPiezas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.OptPiezas.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.OptPiezas.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OptPiezas.ForeColor = System.Drawing.SystemColors.Window;
             this.OptPiezas.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OptPiezas.Name = "OptPiezas";
@@ -138,7 +138,7 @@
             this.OptMantenimientos.AutoSize = false;
             this.OptMantenimientos.BackgroundImage = global::TAP_FinalProyect.Properties.Resources.icons8_mantenimiento_100;
             this.OptMantenimientos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.OptMantenimientos.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.OptMantenimientos.Font = new System.Drawing.Font("Tahoma", 10.5F, System.Drawing.FontStyle.Bold);
             this.OptMantenimientos.ForeColor = System.Drawing.SystemColors.Window;
             this.OptMantenimientos.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OptMantenimientos.Name = "OptMantenimientos";
@@ -151,7 +151,7 @@
             this.OptUsuarios.AutoSize = false;
             this.OptUsuarios.BackgroundImage = global::TAP_FinalProyect.Properties.Resources.icons8_usuario_100;
             this.OptUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.OptUsuarios.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.OptUsuarios.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OptUsuarios.ForeColor = System.Drawing.SystemColors.Window;
             this.OptUsuarios.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OptUsuarios.Name = "OptUsuarios";
@@ -163,7 +163,7 @@
             this.OptCambiarUsuario.AutoSize = false;
             this.OptCambiarUsuario.BackgroundImage = global::TAP_FinalProyect.Properties.Resources.icons8_cerrar_sesión_100;
             this.OptCambiarUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.OptCambiarUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.OptCambiarUsuario.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.OptCambiarUsuario.ForeColor = System.Drawing.SystemColors.Window;
             this.OptCambiarUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OptCambiarUsuario.Name = "OptCambiarUsuario";
@@ -176,7 +176,7 @@
             this.OptSalir.AutoSize = false;
             this.OptSalir.BackgroundImage = global::TAP_FinalProyect.Properties.Resources.icons8_macos_cerrar_601;
             this.OptSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.OptSalir.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.OptSalir.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OptSalir.ForeColor = System.Drawing.SystemColors.Window;
             this.OptSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OptSalir.Name = "OptSalir";

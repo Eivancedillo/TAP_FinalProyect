@@ -56,5 +56,18 @@ namespace TAP_FinalProyect
                 }
             }
         }
+
+        private void TxtUsuario_Click(object sender, EventArgs e)
+        {
+            TxtUsuario.Clear();
+            TxtUsuario.ForeColor = Color.Black;
+        }
+
+        private void TxtClave_Enter(object sender, EventArgs e)
+        {
+            TxtClave.Clear();
+            TxtClave.ForeColor = Color.Black;
+            TxtClave.PasswordChar = '*';
+        }
     }
 }

@@ -32,13 +32,13 @@
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.CmbEstado = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BtnExcel = new System.Windows.Forms.Button();
-            this.BtnAgregar = new System.Windows.Forms.Button();
-            this.BtnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.BtnExcel = new System.Windows.Forms.Button();
+            this.BtnAgregar = new System.Windows.Forms.Button();
+            this.BtnBuscar = new System.Windows.Forms.Button();
             this.BtnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).BeginInit();
             this.panel1.SuspendLayout();
@@ -64,9 +64,10 @@
             // 
             // TxtBuscar
             // 
+            this.TxtBuscar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtBuscar.Location = new System.Drawing.Point(107, 51);
             this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(511, 26);
+            this.TxtBuscar.Size = new System.Drawing.Size(511, 27);
             this.TxtBuscar.TabIndex = 22;
             // 
             // CmbEstado
@@ -93,6 +94,49 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(940, 480);
             this.panel1.TabIndex = 28;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(9, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 19);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Mecanico";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(127)))), ((int)(((byte)(130)))));
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(940, 38);
+            this.panel2.TabIndex = 29;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(107)))), ((int)(((byte)(110)))));
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.BtnClose);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(940, 35);
+            this.panel3.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(81)))), ((int)(((byte)(92)))));
+            this.label2.Location = new System.Drawing.Point(11, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(153, 19);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "MANTENIMIENTO";
             // 
             // BtnExcel
             // 
@@ -129,49 +173,6 @@
             this.BtnBuscar.TabIndex = 30;
             this.BtnBuscar.UseVisualStyleBackColor = false;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(9, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 20);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Mecanico";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(127)))), ((int)(((byte)(130)))));
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(940, 38);
-            this.panel2.TabIndex = 29;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(107)))), ((int)(((byte)(110)))));
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.BtnClose);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(940, 35);
-            this.panel3.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(81)))), ((int)(((byte)(92)))));
-            this.label2.Location = new System.Drawing.Point(11, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 20);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "MANTENIMIENTO";
             // 
             // BtnClose
             // 

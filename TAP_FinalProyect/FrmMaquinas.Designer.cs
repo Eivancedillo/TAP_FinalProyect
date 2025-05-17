@@ -31,14 +31,14 @@
             this.DtgDatos = new System.Windows.Forms.DataGridView();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.BtnExcel = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnBuscar = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.BtnClose = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -51,7 +51,7 @@
             this.DtgDatos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(142)))), ((int)(((byte)(145)))));
             this.DtgDatos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DtgDatos.Location = new System.Drawing.Point(9, 90);
+            this.DtgDatos.Location = new System.Drawing.Point(9, 91);
             this.DtgDatos.Name = "DtgDatos";
             this.DtgDatos.ReadOnly = true;
             this.DtgDatos.RowHeadersWidth = 51;
@@ -63,9 +63,10 @@
             // 
             // TxtBuscar
             // 
+            this.TxtBuscar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtBuscar.Location = new System.Drawing.Point(88, 51);
             this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(659, 26);
+            this.TxtBuscar.Size = new System.Drawing.Size(659, 27);
             this.TxtBuscar.TabIndex = 22;
             // 
             // panel1
@@ -82,6 +83,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(940, 480);
             this.panel1.TabIndex = 25;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(11, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 19);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Nombre";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(127)))), ((int)(((byte)(130)))));
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(940, 38);
+            this.panel2.TabIndex = 37;
             // 
             // BtnExcel
             // 
@@ -119,15 +141,29 @@
             this.BtnBuscar.UseVisualStyleBackColor = false;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
-            // panel2
+            // BtnClose
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(127)))), ((int)(((byte)(130)))));
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(940, 38);
-            this.panel2.TabIndex = 37;
+            this.BtnClose.BackgroundImage = global::TAP_FinalProyect.Properties.Resources.icons8_macos_cerrar_60;
+            this.BtnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClose.FlatAppearance.BorderSize = 0;
+            this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnClose.Location = new System.Drawing.Point(899, 2);
+            this.BtnClose.Name = "BtnClose";
+            this.BtnClose.Size = new System.Drawing.Size(30, 29);
+            this.BtnClose.TabIndex = 27;
+            this.BtnClose.UseVisualStyleBackColor = true;
+            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(81)))), ((int)(((byte)(92)))));
+            this.label2.Location = new System.Drawing.Point(11, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 19);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "PIEZAS";
             // 
             // panel3
             // 
@@ -139,41 +175,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(940, 35);
             this.panel3.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(81)))), ((int)(((byte)(92)))));
-            this.label2.Location = new System.Drawing.Point(11, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 20);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "PIEZAS";
-            // 
-            // BtnClose
-            // 
-            this.BtnClose.BackgroundImage = global::TAP_FinalProyect.Properties.Resources.icons8_macos_cerrar_60;
-            this.BtnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClose.FlatAppearance.BorderSize = 0;
-            this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnClose.Location = new System.Drawing.Point(899, 2);
-            this.BtnClose.Name = "BtnClose";
-            this.BtnClose.Size = new System.Drawing.Size(30, 30);
-            this.BtnClose.TabIndex = 27;
-            this.BtnClose.UseVisualStyleBackColor = true;
-            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(11, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 20);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Nombre";
             // 
             // FrmMaquinas
             // 
@@ -206,9 +207,9 @@
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BtnClose;
-        private System.Windows.Forms.Label label1;
     }
 }
