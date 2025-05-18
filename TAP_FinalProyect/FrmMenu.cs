@@ -57,5 +57,11 @@ namespace TAP_FinalProyect
                 frm.ShowDialog();
             }
         }
+
+        private void OptUsuarios_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios frm = new FrmUsuarios();
+            frm.ShowDialog();
+        }
     }
 }

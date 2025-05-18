@@ -53,6 +53,7 @@
     <Compile Include="ManejadorMaquinas.cs" />
     <Compile Include="ManejadorMecanico.cs" />
     <Compile Include="ManejadorPiezas.cs" />
+    <Compile Include="ManejadorUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

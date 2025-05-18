@@ -70,6 +70,12 @@
     <Compile Include="FrmDatosPiezas.Designer.cs">
       <DependentUpon>FrmDatosPiezas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDatosUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDatosUsuarios.Designer.cs">
+      <DependentUpon>FrmDatosUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDetallesMantenimientos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,12 @@
     <Compile Include="FrmPiezas.Designer.cs">
       <DependentUpon>FrmPiezas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUsuarios.Designer.cs">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmDatosMantenimientos.resx">
@@ -125,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDatosPiezas.resx">
       <DependentUpon>FrmDatosPiezas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDatosUsuarios.resx">
+      <DependentUpon>FrmDatosUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDetallesMantenimientos.resx">
       <DependentUpon>FrmDetallesMantenimientos.cs</DependentUpon>
@@ -146,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPiezas.resx">
       <DependentUpon>FrmPiezas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
