@@ -137,7 +137,7 @@ namespace TAP_FinalProyect
         private void BtnAñadir_Click(object sender, EventArgs e)
         {
             // Validar que la cantidad sea mayor a 0
-            if (int.Parse(TxtCantidad.Text) <= 0)
+            if (int.Parse(TxtCantidad.Text) >= 0)
                 MessageBox.Show("La cantidad debe ser mayor a 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
