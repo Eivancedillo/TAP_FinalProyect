@@ -46,6 +46,11 @@ namespace TAP_FinalProyect
             fila = e.RowIndex; columna = e.ColumnIndex;
         }
 
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void DtgDatos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //Llenar datos

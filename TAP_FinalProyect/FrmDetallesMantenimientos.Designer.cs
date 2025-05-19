@@ -61,7 +61,7 @@
             this.DtgDatosDisponibles.ReadOnly = true;
             this.DtgDatosDisponibles.RowHeadersWidth = 51;
             this.DtgDatosDisponibles.RowTemplate.Height = 24;
-            this.DtgDatosDisponibles.Size = new System.Drawing.Size(446, 242);
+            this.DtgDatosDisponibles.Size = new System.Drawing.Size(531, 242);
             this.DtgDatosDisponibles.TabIndex = 25;
             this.DtgDatosDisponibles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatosDisponibles_CellClick);
             this.DtgDatosDisponibles.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatosDisponibles_CellEnter);
@@ -71,14 +71,14 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 25);
+            this.label1.Size = new System.Drawing.Size(139, 20);
             this.label1.TabIndex = 26;
             this.label1.Text = "Piezas disponibles";
             // 
             // BtnAñadir
             // 
             this.BtnAñadir.Enabled = false;
-            this.BtnAñadir.Location = new System.Drawing.Point(491, 247);
+            this.BtnAñadir.Location = new System.Drawing.Point(559, 243);
             this.BtnAñadir.Name = "BtnAñadir";
             this.BtnAñadir.Size = new System.Drawing.Size(87, 36);
             this.BtnAñadir.TabIndex = 27;
@@ -89,52 +89,52 @@
             // TxtPieza
             // 
             this.TxtPieza.Enabled = false;
-            this.TxtPieza.Location = new System.Drawing.Point(484, 65);
+            this.TxtPieza.Location = new System.Drawing.Point(552, 61);
             this.TxtPieza.Name = "TxtPieza";
-            this.TxtPieza.Size = new System.Drawing.Size(100, 30);
+            this.TxtPieza.Size = new System.Drawing.Size(100, 26);
             this.TxtPieza.TabIndex = 28;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(504, 37);
+            this.label2.Location = new System.Drawing.Point(572, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 25);
+            this.label2.Size = new System.Drawing.Size(48, 20);
             this.label2.TabIndex = 29;
             this.label2.Text = "Pieza";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(502, 105);
+            this.label3.Location = new System.Drawing.Point(570, 101);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 25);
+            this.label3.Size = new System.Drawing.Size(51, 20);
             this.label3.TabIndex = 30;
             this.label3.Text = "Costo";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(489, 173);
+            this.label4.Location = new System.Drawing.Point(557, 169);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 25);
+            this.label4.Size = new System.Drawing.Size(73, 20);
             this.label4.TabIndex = 31;
             this.label4.Text = "Cantidad";
             // 
             // txtCosto
             // 
             this.txtCosto.Enabled = false;
-            this.txtCosto.Location = new System.Drawing.Point(484, 133);
+            this.txtCosto.Location = new System.Drawing.Point(552, 129);
             this.txtCosto.Name = "txtCosto";
-            this.txtCosto.Size = new System.Drawing.Size(100, 30);
+            this.txtCosto.Size = new System.Drawing.Size(100, 26);
             this.txtCosto.TabIndex = 32;
             // 
             // TxtCantidad
             // 
             this.TxtCantidad.Enabled = false;
-            this.TxtCantidad.Location = new System.Drawing.Point(484, 201);
+            this.TxtCantidad.Location = new System.Drawing.Point(552, 197);
             this.TxtCantidad.Name = "TxtCantidad";
-            this.TxtCantidad.Size = new System.Drawing.Size(100, 30);
+            this.TxtCantidad.Size = new System.Drawing.Size(100, 26);
             this.TxtCantidad.TabIndex = 33;
             // 
             // label5
@@ -142,7 +142,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(971, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(140, 25);
+            this.label5.Size = new System.Drawing.Size(112, 20);
             this.label5.TabIndex = 35;
             this.label5.Text = "Piezas usadas";
             // 
@@ -151,12 +151,12 @@
             this.DtgDatosUsadas.AllowUserToAddRows = false;
             this.DtgDatosUsadas.BackgroundColor = System.Drawing.SystemColors.Info;
             this.DtgDatosUsadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DtgDatosUsadas.Location = new System.Drawing.Point(616, 37);
+            this.DtgDatosUsadas.Location = new System.Drawing.Point(658, 37);
             this.DtgDatosUsadas.Name = "DtgDatosUsadas";
             this.DtgDatosUsadas.ReadOnly = true;
             this.DtgDatosUsadas.RowHeadersWidth = 51;
             this.DtgDatosUsadas.RowTemplate.Height = 24;
-            this.DtgDatosUsadas.Size = new System.Drawing.Size(495, 246);
+            this.DtgDatosUsadas.Size = new System.Drawing.Size(531, 246);
             this.DtgDatosUsadas.TabIndex = 34;
             this.DtgDatosUsadas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatosUsadas_CellClick);
             this.DtgDatosUsadas.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatosUsadas_CellEnter);
@@ -190,7 +190,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(12, 293);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 25);
+            this.label6.Size = new System.Drawing.Size(85, 20);
             this.label6.TabIndex = 38;
             this.label6.Text = "Mecanicos";
             // 
@@ -204,7 +204,7 @@
             this.DtgMecanicos.ReadOnly = true;
             this.DtgMecanicos.RowHeadersWidth = 51;
             this.DtgMecanicos.RowTemplate.Height = 24;
-            this.DtgMecanicos.Size = new System.Drawing.Size(446, 161);
+            this.DtgMecanicos.Size = new System.Drawing.Size(531, 161);
             this.DtgMecanicos.TabIndex = 39;
             this.DtgMecanicos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgMecanicos_CellClick);
             this.DtgMecanicos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgMecanicos_CellEnter);
@@ -214,12 +214,12 @@
             this.DtgMecanicosUso.AllowUserToAddRows = false;
             this.DtgMecanicosUso.BackgroundColor = System.Drawing.SystemColors.Info;
             this.DtgMecanicosUso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DtgMecanicosUso.Location = new System.Drawing.Point(616, 321);
+            this.DtgMecanicosUso.Location = new System.Drawing.Point(658, 321);
             this.DtgMecanicosUso.Name = "DtgMecanicosUso";
             this.DtgMecanicosUso.ReadOnly = true;
             this.DtgMecanicosUso.RowHeadersWidth = 51;
             this.DtgMecanicosUso.RowTemplate.Height = 24;
-            this.DtgMecanicosUso.Size = new System.Drawing.Size(495, 161);
+            this.DtgMecanicosUso.Size = new System.Drawing.Size(531, 161);
             this.DtgMecanicosUso.TabIndex = 40;
             this.DtgMecanicosUso.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgMecanicosUso_CellClick);
             this.DtgMecanicosUso.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgMecanicosUso_CellEnter);
@@ -229,16 +229,16 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(845, 293);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(266, 25);
+            this.label7.Size = new System.Drawing.Size(216, 20);
             this.label7.TabIndex = 41;
             this.label7.Text = "Mecanicos en mantenimiento";
             // 
             // FrmDetallesMantenimientos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1123, 555);
+            this.ClientSize = new System.Drawing.Size(1201, 555);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.DtgMecanicosUso);
             this.Controls.Add(this.DtgMecanicos);

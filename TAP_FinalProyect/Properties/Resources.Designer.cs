@@ -93,6 +93,16 @@ namespace TAP_FinalProyect.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_guardar_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-guardar-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_ice_maker_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-ice-maker-100", resourceCulture);

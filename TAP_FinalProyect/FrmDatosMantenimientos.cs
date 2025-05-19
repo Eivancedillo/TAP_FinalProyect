@@ -72,7 +72,6 @@ namespace TAP_FinalProyect
 
                 idMantenimiento = FrmMantenimientos.mantenimientos.IdMantenimiento;
             }
-            
             Close();
         }
     }
