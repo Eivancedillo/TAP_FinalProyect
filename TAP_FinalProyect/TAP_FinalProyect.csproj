@@ -199,6 +199,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\db_TAPFinalProyect.dump" />
     <None Include="Resources\icons8-macos-cerrar-60.png" />
   </ItemGroup>
   <ItemGroup>

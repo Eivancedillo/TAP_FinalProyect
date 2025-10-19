@@ -40,7 +40,7 @@ namespace TAP_FinalProyect
             maquinas.IdMaquina = int.Parse(DtgDatos.Rows[fila].Cells["idmaquina"].Value.ToString());
             maquinas.Nombre = DtgDatos.Rows[fila].Cells["nombre"].Value.ToString();
             maquinas.Descripcion = DtgDatos.Rows[fila].Cells["descripcion"].Value.ToString();
-
+                
             switch (columna)
             {
                 case 3:

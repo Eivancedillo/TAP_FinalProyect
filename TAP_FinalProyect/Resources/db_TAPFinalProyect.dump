@@ -1,0 +1,802 @@
+-- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: db_TAPFinalProyect
+-- ------------------------------------------------------
+-- Server version	9.2.0
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `tbl_detallemantenimientos`
+--
+
+DROP TABLE IF EXISTS `tbl_detallemantenimientos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tbl_detallemantenimientos` (
+  `iddetalle` int NOT NULL AUTO_INCREMENT,
+  `idpieza` int NOT NULL,
+  `idmantenimiento` int NOT NULL,
+  `cantidad` int NOT NULL,
+  `costo` decimal(10,2) NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`iddetalle`),
+  KEY `idpieza` (`idpieza`),
+  KEY `idmantenimiento` (`idmantenimiento`),
+  CONSTRAINT `tbl_detallemantenimientos_ibfk_1` FOREIGN KEY (`idpieza`) REFERENCES `tbl_piezas` (`idpieza`),
+  CONSTRAINT `tbl_detallemantenimientos_ibfk_2` FOREIGN KEY (`idmantenimiento`) REFERENCES `tbl_mantenimientos` (`idmantenimiento`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_detallemantenimientos`
+--
+
+LOCK TABLES `tbl_detallemantenimientos` WRITE;
+/*!40000 ALTER TABLE `tbl_detallemantenimientos` DISABLE KEYS */;
+INSERT INTO `tbl_detallemantenimientos` VALUES (3,1,2,2,20.10,'2025-05-06 23:27:19','2025-05-06 23:27:19'),(10,1,3,5,20.10,'2025-05-08 17:26:48','2025-05-08 17:26:48'),(11,2,3,8,200.00,'2025-05-08 17:26:59','2025-05-08 17:26:59');
+/*!40000 ALTER TABLE `tbl_detallemantenimientos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_mantenimientos`
+--
+
+DROP TABLE IF EXISTS `tbl_mantenimientos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tbl_mantenimientos` (
+  `idmantenimiento` int NOT NULL AUTO_INCREMENT,
+  `fkidmaquina` int NOT NULL,
+  `fkidmecanico` int NOT NULL,
+  `fecha` datetime NOT NULL,
+  `descripcion` text,
+  `estado` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'Pendiente',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idmantenimiento`),
+  KEY `fkidmaquina` (`fkidmaquina`),
+  KEY `fkidmecanico` (`fkidmecanico`),
+  CONSTRAINT `tbl_mantenimientos_ibfk_1` FOREIGN KEY (`fkidmaquina`) REFERENCES `tbl_maquinas` (`idmaquina`),
+  CONSTRAINT `tbl_mantenimientos_ibfk_2` FOREIGN KEY (`fkidmecanico`) REFERENCES `tbl_mecanicos` (`idmecanico`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_mantenimientos`
+--
+
+LOCK TABLES `tbl_mantenimientos` WRITE;
+/*!40000 ALTER TABLE `tbl_mantenimientos` DISABLE KEYS */;
+INSERT INTO `tbl_mantenimientos` VALUES (1,3,2,'2025-05-05 00:00:00','Preventivo','Finalizado','2025-05-06 15:01:27','2025-05-07 16:00:45'),(2,3,2,'2025-05-07 00:00:00','Cambio de piezas','Pendiente','2025-05-06 15:07:36','2025-05-07 16:38:14'),(3,2,2,'2025-05-08 00:00:00','algo','Pendiente','2025-05-08 17:26:37','2025-05-08 17:26:37');
+/*!40000 ALTER TABLE `tbl_mantenimientos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_maquinas`
+--
+
+DROP TABLE IF EXISTS `tbl_maquinas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tbl_maquinas` (
+  `idmaquina` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) NOT NULL,
+  `descripcion` text,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idmaquina`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_maquinas`
+--
+
+LOCK TABLES `tbl_maquinas` WRITE;
+/*!40000 ALTER TABLE `tbl_maquinas` DISABLE KEYS */;
+INSERT INTO `tbl_maquinas` VALUES (2,'Torno','Tornea','2025-05-06 13:47:53','2025-05-06 13:47:53'),(3,'Laptop','Una lap we','2025-05-06 13:48:02','2025-05-06 13:48:02');
+/*!40000 ALTER TABLE `tbl_maquinas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_mecanicos`
+--
+
+DROP TABLE IF EXISTS `tbl_mecanicos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tbl_mecanicos` (
+  `idmecanico` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) NOT NULL,
+  `apellidos` varchar(150) NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idmecanico`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_mecanicos`
+--
+
+LOCK TABLES `tbl_mecanicos` WRITE;
+/*!40000 ALTER TABLE `tbl_mecanicos` DISABLE KEYS */;
+INSERT INTO `tbl_mecanicos` VALUES (2,'Vianney','Veloz Padilla','2025-05-06 13:47:29','2025-05-06 13:47:29'),(3,'Eivan Eduardo','Cedillo Frias','2025-05-06 13:47:36','2025-05-06 13:47:36');
+/*!40000 ALTER TABLE `tbl_mecanicos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_mecanicosmantenimientos`
+--
+
+DROP TABLE IF EXISTS `tbl_mecanicosmantenimientos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tbl_mecanicosmantenimientos` (
+  `idmecanicomantenimiento` int NOT NULL AUTO_INCREMENT,
+  `fkidmantenimiento` int DEFAULT NULL,
+  `fkidmecanico` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idmecanicomantenimiento`),
+  KEY `fkidmecanico` (`fkidmecanico`),
+  KEY `fkidmantenimiento` (`fkidmantenimiento`),
+  CONSTRAINT `tbl_mecanicosmantenimientos_ibfk_1` FOREIGN KEY (`fkidmecanico`) REFERENCES `tbl_mecanicos` (`idmecanico`),
+  CONSTRAINT `tbl_mecanicosmantenimientos_ibfk_2` FOREIGN KEY (`fkidmantenimiento`) REFERENCES `tbl_mantenimientos` (`idmantenimiento`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_mecanicosmantenimientos`
+--
+
+LOCK TABLES `tbl_mecanicosmantenimientos` WRITE;
+/*!40000 ALTER TABLE `tbl_mecanicosmantenimientos` DISABLE KEYS */;
+INSERT INTO `tbl_mecanicosmantenimientos` VALUES (3,2,2,'2025-05-07 15:53:00','2025-05-07 15:53:00'),(4,3,2,'2025-05-08 17:26:52','2025-05-08 17:26:52');
+/*!40000 ALTER TABLE `tbl_mecanicosmantenimientos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_piezas`
+--
+
+DROP TABLE IF EXISTS `tbl_piezas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tbl_piezas` (
+  `idpieza` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) NOT NULL,
+  `stock` int NOT NULL,
+  `costo` decimal(10,2) NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idpieza`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_piezas`
+--
+
+LOCK TABLES `tbl_piezas` WRITE;
+/*!40000 ALTER TABLE `tbl_piezas` DISABLE KEYS */;
+INSERT INTO `tbl_piezas` VALUES (1,'Tornilloo',8,20.10,'2025-05-05 21:51:00','2025-05-08 17:26:48'),(2,'Tornillo2',91,200.00,'2025-05-06 14:19:33','2025-05-08 17:26:59'),(3,'Tornillo3',2,2.00,'2025-05-06 14:19:45','2025-05-06 14:19:45');
+/*!40000 ALTER TABLE `tbl_piezas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuarios`
+--
+
+DROP TABLE IF EXISTS `usuarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `usuarios` (
+  `idu` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(50) DEFAULT NULL,
+  `clave` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`idu`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuarios`
+--
+
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (3,'admin','d033e22ae348aeb5660fc2140aec35850c4da997');
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `v_mantenimientos`
+--
+
+DROP TABLE IF EXISTS `v_mantenimientos`;
+/*!50001 DROP VIEW IF EXISTS `v_mantenimientos`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `v_mantenimientos` AS SELECT 
+ 1 AS `idmantenimiento`,
+ 1 AS `idmaquina`,
+ 1 AS `Maquina`,
+ 1 AS `idmecanico`,
+ 1 AS `Mecanico`,
+ 1 AS `Fecha`,
+ 1 AS `Descripcion`,
+ 1 AS `Estado`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `v_maquinas`
+--
+
+DROP TABLE IF EXISTS `v_maquinas`;
+/*!50001 DROP VIEW IF EXISTS `v_maquinas`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `v_maquinas` AS SELECT 
+ 1 AS `idmaquina`,
+ 1 AS `nombre`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `v_mecanicos`
+--
+
+DROP TABLE IF EXISTS `v_mecanicos`;
+/*!50001 DROP VIEW IF EXISTS `v_mecanicos`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `v_mecanicos` AS SELECT 
+ 1 AS `idmecanico`,
+ 1 AS `nombre`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `v_mecanicosusados`
+--
+
+DROP TABLE IF EXISTS `v_mecanicosusados`;
+/*!50001 DROP VIEW IF EXISTS `v_mecanicosusados`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `v_mecanicosusados` AS SELECT 
+ 1 AS `idmecanicomantenimiento`,
+ 1 AS `fkidmantenimiento`,
+ 1 AS `fkidmecanico`,
+ 1 AS `Nombre`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `v_piezasdisponibles`
+--
+
+DROP TABLE IF EXISTS `v_piezasdisponibles`;
+/*!50001 DROP VIEW IF EXISTS `v_piezasdisponibles`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `v_piezasdisponibles` AS SELECT 
+ 1 AS `idpieza`,
+ 1 AS `Nombre`,
+ 1 AS `Costo`,
+ 1 AS `Stock restante`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `v_piezasusadas`
+--
+
+DROP TABLE IF EXISTS `v_piezasusadas`;
+/*!50001 DROP VIEW IF EXISTS `v_piezasusadas`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `v_piezasusadas` AS SELECT 
+ 1 AS `idmantenimiento`,
+ 1 AS `iddetalle`,
+ 1 AS `idpieza`,
+ 1 AS `Nombre`,
+ 1 AS `Cantidad`,
+ 1 AS `Costo`,
+ 1 AS `Total`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `v_ultimomantenimiento`
+--
+
+DROP TABLE IF EXISTS `v_ultimomantenimiento`;
+/*!50001 DROP VIEW IF EXISTS `v_ultimomantenimiento`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `v_ultimomantenimiento` AS SELECT 
+ 1 AS `id`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping routines for database 'db_TAPFinalProyect'
+--
+/*!50003 DROP PROCEDURE IF EXISTS `p_actualizar_stock` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` PROCEDURE `p_actualizar_stock`(
+	_idpieza INT,
+	_cantidad INT
+)
+BEGIN
+	update tbl_piezas set stock = stock - _cantidad where idpieza = _idpieza;
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `p_editar_detallesmantenimiento` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` PROCEDURE `p_editar_detallesmantenimiento`(
+	_iddetalle INT,
+    _cantidad INT,
+    _costo DECIMAL(10,2)
+)
+BEGIN
+	update tbl_detallemantenimientos set cantidad = _cantidad, costo = _costo 
+	where iddetalle = _iddetalle;
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `p_editar_mantenimientos` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` PROCEDURE `p_editar_mantenimientos`(
+	_idmantenimiento INT,
+    _fkidmaquina INT,
+    _fkidmecanico INT,
+    _fecha DATE,
+    _descripcion TEXT
+)
+BEGIN
+	UPDATE tbl_mantenimientos set idmantenimiento = _idmantenimiento, fkidmaquina = _fkidmaquina, 
+	fkidmecanico = _fkidmecanico, fecha = _fecha, descripcion = _descripcion
+	where idmantenimiento = _idmantenimiento;
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `p_editar_mantenimientos_estado` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` PROCEDURE `p_editar_mantenimientos_estado`(
+	_idmantenimiento INT,
+	_estado varchar(10)
+)
+BEGIN
+	UPDATE tbl_mantenimientos set estado = _estado where idmantenimiento = _idmantenimiento;
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `p_editar_maquinas` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` PROCEDURE `p_editar_maquinas`(
+    _idmaquina INT,
+    _nombre VARCHAR(100),
+    _descripcion TEXT
+)
+BEGIN
+	UPDATE tbl_maquinas set nombre = _nombre, descripcion = _descripcion where idmaquina = _idmaquina;
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `p_editar_mecanico` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` PROCEDURE `p_editar_mecanico`(
+	_idmecanico int,
+    _nombre VARCHAR(100),
+    _apellidos VARCHAR(150)
+)
+BEGIN
+	UPDATE tbl_mecanicos set nombre = _nombre, apellidos = _apellidos where idmecanico = _idmecanico;
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `p_editar_piezas` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` PROCEDURE `p_editar_piezas`(
+    _idpieza INT,
+    _nombre VARCHAR(100),
+    _stock INT,
+    _costo DECIMAL(10,2)
+)
+BEGIN
+	UPDATE tbl_piezas set nombre = _nombre, stock = _stock, costo = _costo where idpieza = _idpieza;
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `p_insertar_detallematenimientomecanico` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` PROCEDURE `p_insertar_detallematenimientomecanico`(
+	_fkidmantenimiento int,
+	_fkidmecanico int
+)
+BEGIN
+	insert into tbl_mecanicosmantenimientos(fkidmantenimiento, fkidmecanico) 
+	values(_fkidmantenimiento, _fkidmecanico);
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `p_insertar_detallesmantenimiento` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` PROCEDURE `p_insertar_detallesmantenimiento`(
+    _idpieza INT,
+    _idmantenimiento INT,
+    _cantidad INT,
+    _costo DECIMAL(10,2)
+)
+BEGIN
+	insert into tbl_detallemantenimientos(idpieza, idmantenimiento, cantidad, costo) 
+	values(_idpieza, _idmantenimiento, _cantidad, _costo);
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `p_insertar_mantenimientos` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` PROCEDURE `p_insertar_mantenimientos`(
+    _fkidmaquina INT,
+    _fkidmecanico INT,
+    _fecha DATE,
+    _descripcion TEXT
+)
+BEGIN
+	insert into tbl_mantenimientos(fkidmaquina, fkidmecanico, fecha, descripcion) 
+	values(_fkidmaquina, _fkidmecanico, _fecha, _descripcion);
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `p_insertar_maquinas` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` PROCEDURE `p_insertar_maquinas`(
+    _nombre VARCHAR(100),
+    _descripcion TEXT
+)
+BEGIN
+	insert into tbl_maquinas(nombre, descripcion) values(_nombre, _descripcion);
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `p_insertar_mecanico` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` PROCEDURE `p_insertar_mecanico`(
+    _nombre VARCHAR(100),
+    _apellidos VARCHAR(150)
+)
+BEGIN
+	insert into tbl_mecanicos(nombre, apellidos) values(_nombre, _apellidos);
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `p_insertar_piezas` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` PROCEDURE `p_insertar_piezas`(
+    _nombre VARCHAR(100),
+    _stock INT,
+    _costo DECIMAL(10,2)
+)
+BEGIN
+	insert into tbl_piezas(nombre, stock, costo) values(_nombre, _stock, _costo);
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `validar` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` PROCEDURE `validar`(
+in _nombre VARCHAR(50),
+IN _clave VARCHAR(255)
+)
+BEGIN
+	declare x INT;
+	
+	SELECT COUNT(*) FROM usuarios WHERE nombre = _nombre AND clave = _clave INTO x;
+	
+	if X > 0 then
+		SELECT 'Aceptado' AS rs;
+	else
+		SELECT 'Error' AS rs;
+	END if;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
+-- Final view structure for view `v_mantenimientos`
+--
+
+/*!50001 DROP VIEW IF EXISTS `v_mantenimientos`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `v_mantenimientos` AS select `ma`.`idmantenimiento` AS `idmantenimiento`,`ma`.`fkidmaquina` AS `idmaquina`,`maq`.`nombre` AS `Maquina`,`ma`.`fkidmecanico` AS `idmecanico`,`me`.`nombre` AS `Mecanico`,`ma`.`fecha` AS `Fecha`,`ma`.`descripcion` AS `Descripcion`,`ma`.`estado` AS `Estado` from ((`tbl_mantenimientos` `ma` join `tbl_mecanicos` `me` on((`ma`.`fkidmecanico` = `me`.`idmecanico`))) join `tbl_maquinas` `maq` on((`ma`.`fkidmaquina` = `maq`.`idmaquina`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `v_maquinas`
+--
+
+/*!50001 DROP VIEW IF EXISTS `v_maquinas`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `v_maquinas` AS select `m`.`idmaquina` AS `idmaquina`,`m`.`nombre` AS `nombre` from `tbl_maquinas` `m` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `v_mecanicos`
+--
+
+/*!50001 DROP VIEW IF EXISTS `v_mecanicos`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `v_mecanicos` AS select `m`.`idmecanico` AS `idmecanico`,`m`.`nombre` AS `nombre` from `tbl_mecanicos` `m` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `v_mecanicosusados`
+--
+
+/*!50001 DROP VIEW IF EXISTS `v_mecanicosusados`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `v_mecanicosusados` AS select `m`.`idmecanicomantenimiento` AS `idmecanicomantenimiento`,`m`.`fkidmantenimiento` AS `fkidmantenimiento`,`m`.`fkidmecanico` AS `fkidmecanico`,`me`.`nombre` AS `Nombre` from (`tbl_mecanicosmantenimientos` `m` join `tbl_mecanicos` `me` on((`m`.`fkidmecanico` = `me`.`idmecanico`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `v_piezasdisponibles`
+--
+
+/*!50001 DROP VIEW IF EXISTS `v_piezasdisponibles`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `v_piezasdisponibles` AS select `p`.`idpieza` AS `idpieza`,`p`.`nombre` AS `Nombre`,`p`.`costo` AS `Costo`,`p`.`stock` AS `Stock restante` from `tbl_piezas` `p` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `v_piezasusadas`
+--
+
+/*!50001 DROP VIEW IF EXISTS `v_piezasusadas`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `v_piezasusadas` AS select `d`.`idmantenimiento` AS `idmantenimiento`,`d`.`iddetalle` AS `iddetalle`,`d`.`idpieza` AS `idpieza`,`p`.`nombre` AS `Nombre`,`d`.`cantidad` AS `Cantidad`,`d`.`costo` AS `Costo`,(`d`.`cantidad` * `d`.`costo`) AS `Total` from (`tbl_detallemantenimientos` `d` join `tbl_piezas` `p` on((`d`.`idpieza` = `p`.`idpieza`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `v_ultimomantenimiento`
+--
+
+/*!50001 DROP VIEW IF EXISTS `v_ultimomantenimiento`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `v_ultimomantenimiento` AS select coalesce(max(`tbl_mantenimientos`.`idmantenimiento`),0) AS `id` from `tbl_mantenimientos` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2025-10-19 16:03:56
